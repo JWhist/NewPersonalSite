@@ -26,6 +26,7 @@ var paths = {
     vendors: "public_html/assets/vendors/**/*.*",
     imgs: "public_html/assets/imgs/**/*.+(png|jpg|gif|svg)",
     scss: "public_html/assets/scss/**/*.scss",
+    pdf: "public_html/**/*.pdf",
   },
   dist: {
     root: "public_html/dist",
@@ -102,8 +103,16 @@ gulp.task("html", function () {
     .pipe(gulp.dest(paths.dist.root));
 });
 
+// move pdf file to dist
+gulp.task("pdf", function () {
+  return gulp.src(paths.src.pdf).pipe(gulp.dest(paths.dist.root));
+});
+
 // Prepare all assets for production
-gulp.task("build", gulp.series("sass", "css", "js", "vendors", "img", "html"));
+gulp.task(
+  "build",
+  gulp.series("sass", "css", "js", "vendors", "img", "html", "pdf")
+);
 
 // Watch (SASS, CSS, JS, and HTML) reload browser on change
 gulp.task("watch", function () {
