@@ -11,6 +11,7 @@ const browserSync = require("browser-sync").create();
 const autoprefixer = require("gulp-autoprefixer");
 const jpgRecompress = require("imagemin-jpeg-recompress");
 const clean = require("gulp-clean");
+const processhtml = require("gulp-processhtml");
 
 // Paths
 var paths = {
@@ -95,7 +96,10 @@ gulp.task("clean", function () {
 
 // move html files to dist
 gulp.task("html", function () {
-  return gulp.src(paths.src.html).pipe(gulp.dest(paths.dist.root));
+  return gulp
+    .src(paths.src.html)
+    .pipe(processhtml())
+    .pipe(gulp.dest(paths.dist.root));
 });
 
 // Prepare all assets for production
