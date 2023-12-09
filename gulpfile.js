@@ -93,8 +93,13 @@ gulp.task("clean", function () {
   return gulp.src(paths.dist.root).pipe(clean());
 });
 
+// move html files to dist
+gulp.task("html", function () {
+  return gulp.src(paths.src.html).pipe(gulp.dest(paths.dist.root));
+});
+
 // Prepare all assets for production
-gulp.task("build", gulp.series("sass", "css", "js", "vendors", "img"));
+gulp.task("build", gulp.series("sass", "css", "js", "vendors", "img", "html"));
 
 // Watch (SASS, CSS, JS, and HTML) reload browser on change
 gulp.task("watch", function () {
