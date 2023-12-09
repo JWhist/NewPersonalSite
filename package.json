@@ -32,5 +32,8 @@
     "opera >= 23",
     "ios >= 7",
     "android >= 4"
-  ]
+  ],
+  "dependencies": {
+    "sass": "^1.69.5"
+  }
 }
