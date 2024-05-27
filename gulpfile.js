@@ -63,7 +63,6 @@ gulp.task("js", function () {
     .src(paths.src.js)
     .pipe(uglify())
     .pipe(concat("johndoe.js"))
-    .pipe(concat("maze.js"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest(paths.dist.js))
     .pipe(browserSync.stream());
