@@ -62,7 +62,7 @@
 @import "vendors/bootstrap-4.3.1/print";
 
 
-// custom 
+// custom
 @import "base/typography";
 
 @import "components/breadcrumb";
@@ -77,3 +77,26 @@
 @import "layout/footer";
 @import "layout/header";
 @import "layout/sections";
+
+.maze {
+  display: grid;
+  place-items: center;
+}
+
+.cell {
+  display: block;
+  width: 4px;
+  height: 4px;
+  /* border: 1px solid black; */
+  /* text-align: center;
+  line-height: 10px;
+  font-size: 8px; */
+}
+
+.wall {
+  background-color: #f85c70;
+}
+
+.visited {
+  background-color: #A3C14A;
+}
