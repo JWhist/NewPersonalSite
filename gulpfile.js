@@ -53,7 +53,6 @@ gulp.task("css", function () {
     .src(paths.src.css)
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(concat("johndoe.css"))
-    .pipe(concat("maze.css"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest(paths.dist.css));
 });
