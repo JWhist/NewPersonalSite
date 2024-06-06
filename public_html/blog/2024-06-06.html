@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Jordan Whistler">
+    <title>Jordan Whistler</title>
+    <!-- build:[src] ../imgs/favicon-16x16.png-->
+    <link rel="icon" type="img/png" href="../imgs/favicon-16x16.png">
+    <!-- /build -->
+    <!-- font icons -->
+    <!-- build:css ../vendors/themify-icons/css/themify-icons.css-->
+    <link rel="stylesheet" href="../assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- /build -->
+    <!-- Bootstrap + JohnDoe main styles -->
+    <!-- build:css ../css/johndoe.min.css -->
+	  <link rel="stylesheet" href="../assets/css/johndoe.css">
+    <!-- /build -->
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <!-- <a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600"><i class="ti-shift-left-alt"></i> Components</a> -->
+        <div class="container">
+            <ul class="social-icons pt-3">
+                <!-- <li class="social-item"><a class="social-link text-light" href="#"><i class="ti-facebook" aria-hidden="true"></i></a></li>
+                <li class="social-item"><a class="social-link text-light" href="#"><i class="ti-twitter" aria-hidden="true"></i></a></li>
+                <li class="social-item"><a class="social-link text-light" href="#"><i class="ti-google" aria-hidden="true"></i></a></li>
+                <li class="social-item"><a class="social-link text-light" href="#"><i class="ti-instagram" aria-hidden="true"></i></a></li> -->
+                <li class="social-item"><a class="social-link text-light" href="https://github.com/jwhist"><i class="ti-github" aria-hidden="true"></i></a></li>
+            </ul>
+
+        </div>
+     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
+        <div class="container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.jordanwhistler.info/#about" class="nav-link">About</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a href="#resume" class="nav-link"></a>
+                    </li> -->
+                </ul>
+                <ul class="navbar-nav brand">
+                    <!-- build:[src] ../imgs/avatar.jpg -->
+                    <img src="../assets/imgs/avatar.jpg" alt="" class="brand-img">
+                    <!-- /build -->
+                    <li class="brand-txt">
+                        <h5 class="brand-title">Jordan Whistler</h5>
+                        <div class="brand-subtitle">Backend Engineer</div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <!-- <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="https://www.jordanwhistler.info/#blog" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item last-item">
+                        <a href="https://www.jordanwhistler.info/#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container section">
+        <div class="container">
+            <h2>Buckling Down</h2>
+            <h6><i>June 6, 2024</i></h6>
+        </div>
+        <div class="container">
+          <p class="h5">
+            After identifying the types of roles and companies that I will be targeting first, I began reaching out to my network to see if anyone had any connections at these companies. I also began to reach out to recruiters to see if they had any roles that matched my criteria.
+          </p>
+          <p class="h5">
+            Although most job boards seem to have a lot of the same postings, I am using a few different ones to try to find the best opportunities. I am also using LinkedIn to find roles that are not posted on job boards.
+        <p class="h5">
+          I'm also working my way through the Blind 75 on <a href="https://neetcode.io/">neetcode</a> in order to prepare for technical interviews, and have a few personal projects in mind that I would like to work on.
+        </p>
+        <p class="h5">
+          One of the problems that I remembered from several years ago, that isn't particularly complex, is the stair climber problem.  For some reason, I find this one especially fascinating and a good use case for computers in general. It is the kind of problem that makes me wish I were a mathemetician and could solve it on paper.
+        </p>
+        <p class="h5">
+          The crux of the problem is this: Suppose you are at the foot of a staircase, and you can climb the staircase by either taking one step, or two steps at a time, eventually reaching the top step on the last step. How many different ways can you climb the staircase?
+        </p>
+        <!-- build:[src] ../imgs/stairs.png -->
+        <img src="../assets/imgs/stairs.png" alt="Stairs with arrows depicting one or two step jumps" class="pic">
+        <!-- /build -->
+        <p class="h5">
+          The solution is ironically not to look from the bottom up, but instead to look from the top stair down and count backwards recursively until you hit the base case. The base case is when you are at the first or second step, and there is only one way to get there. From there, you can either take one step or two steps, and the number of ways to get to the top is the sum of the number of ways to get to the top from the previous step and the step before that.
+        </p>
+        <p class="h5">
+          This is a classic example of a problem that can be solved with dynamic programming, and is a good example of how to break a problem down into smaller subproblems and solve them in order to solve the larger problem.
+        </p>
+        <p class="h5">
+          Because the top step can only be reached by either the top-1 or top-2nd steps, the number of ways to reach the top step must be the sum of the ways to reach those steps, or steps(top-1) + steps(top-2).
+        </p>
+        <p class="h5">
+          But what if we are on the 2nd or 1st to last step? These are our base cases in which case our recursive function will return. For the first step we return 1. There is only one way to reach the first step. For the second step, we return 2. There are two ways to reach the second step, either by taking two steps from the base step, or by taking one step twice, once from the base and once from the first step.
+        </p>
+        <p class="h5">
+          So now our function looks like this:
+          <div>
+          <pre><code>
+            function steps(n) {
+              if (n === 1) return 1
+              if (n === 2) return 2
+
+              return steps(n-1) + steps(n-2)
+            }
+          </code></pre>
+          </div>
+        </p>
+        <p class="h5">
+          It is tempting to stop here and congratulate ourselves! But as is often the case with recursion, we should notice something. There are two recursive calls in this function, and they are not memoized. This means that we are recalculating the same values over and over again, which is not efficient. We can fix this by memoizing the results of our recursive calls:
+        </p>
+        <div>
+          <pre><code>
+            const seen = {0:0}
+            function climbStairs(n) {
+                if (n === 1) {
+                    return 1
+                } else if (n === 2) {
+                    return 2
+                }
+
+                seen[n-1] = seen[n-1] || climbStairs(n-1)
+                seen[n-2] = seen[n-2] || climbStairs(n-2)
+
+                return seen[n-1] + seen[n-2]
+            }
+          </code></pre>
+          </div>
+        <p class="h5">
+          By storing computed values for later access in a map, we cut down the number of recursive calculations made exponentially, and can now calculate the number of ways to climb a staircase with n steps in O(n) time and O(n) space.
+        </p>
+        <p class="h5">
+          For a staircase with 20 steps, by taking 1 or 2 steps each time, there are <strong>10,946</strong> different ways you can climb the stairs!
+        </p>
+      </div>
+
+    </div>
+
+
+
+    <!-- build:js ../vendors/jquery/jquery-3.4.1.min.js -->
+    <script src="../assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <!-- /build -->
+        <!-- build:js ../vendors/bootstrap/bootstrap.bundle.min.js-->
+        <script src="../assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+        <!-- /build -->
+
+        <!-- bootstrap 3 affix -->
+
+        <!-- build:js ../vendors/bootstrap/bootstrap.affix.js -->
+        <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+        <!-- /build -->
+
+        <!-- Isotope  -->
+
+        <!-- build:js ../vendors/isotope/isotope.pkgd.min.js -->
+        <script src="../assets/vendors/isotope/isotope.pkgd.js"></script>
+        <!-- /build -->
+    <!-- build:js ../js/johndoe.min.js -->
+    <script src="../assets/js/johndoe.js"></script>
+    <!-- /build -->
+  </body>
+</html>
