@@ -121,21 +121,21 @@
             Suppose we now try to find a doc in our database via a command like:
           </p>
           <p class="h5">
-            <code>
+            <pre><code>
               coll := client.Database("my_database").Collection("stuff")
               filter := bson.D{{"name", "samuel l jackson"}}
               // Retrieves the first matching document
               var result Actor
               err = coll.FindOne(context.TODO(), filter).Decode(&result)
-            </code>
+            </code></pre>
           </p>
           <p class="h5">
             We are suddenly met with an error!
           </p>
           <p class="h5">
-            <code>
+            <pre><code>
               Could not connect to mongodb_s1.dev:27017 x509: certificate signed by unknown authority (possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate "XYZ")
-            </code>
+            </code></pre>
           </p>
           <p class="h5">
             <!-- build:[src] ../imgs/NoCert.png -->
@@ -150,12 +150,12 @@
             Once the user is edit/created and the certificate is downloaded (do not check this in to github, store it somewhere secure!), we need to ensure this is loaded into our container on build and our certificate store is updated. This will allow our applications http server to trust our database connection URI origin and complete the client setup:
           </p>
           <p class="h5">
-            <code>
+            <pre><code>
               COPY path/to/mongoCert.pem /etc/ssl/certs/ca.pem
               RUN apt-get update && apt-get install -y ca-certificates
               RUN cp /etc/ssl/certs/ca.pem /usr/local/share/ca-certificates/ca.crt
               RUN update-ca-certificates
-            </code>
+            </code></pre>
           </p>
           <p class="h5">
             <code>COPY path/to/mongoCert.pem /etc/ssl/certs/ca.pem</code>
