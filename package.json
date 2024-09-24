@@ -35,6 +35,9 @@
     "android >= 4"
   ],
   "dependencies": {
+    "express": "^4.21.0",
+    "mongodb": "^6.9.0",
+    "netlify": "^13.1.21",
     "sass": "^1.69.5"
   }
 }

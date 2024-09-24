@@ -1,0 +1,7 @@
+[dev]
+command = "gulp watch"
+targetPort = 3000
+
+[[edge_functions]]
+path = "/canary.html"
+function = "canary"
