@@ -2,7 +2,7 @@
 import { Context } from "@netlify/edge-functions";
 import { HTMLRewriter } from "https://raw.githubusercontent.com/worker-tools/html-rewriter/master/index.ts";
 
-import { MongoClient, ServerApiVersion } from "npm:mongodb";
+import { MongoClient, ServerApiVersion } from "mongodb";
 
 Object.defineProperty(Deno, "osRelease", {
   value: () => "mock-release",
