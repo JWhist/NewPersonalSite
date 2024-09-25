@@ -9,7 +9,7 @@ Object.defineProperty(Deno, "osRelease", {
 });
 
 const password = Netlify.env.get("MONGODB_PW");
-// const mongoUri = `mongodb+srv://whistlerjordan:${password}@dev.z1sv7.mongodb.net/?retryWrites=true&w=majority&appName=Dev`;
+const mongoUri = `mongodb+srv://whistlerjordan:${password}@dev.z1sv7.mongodb.net/Dev?authMechanism=SCRAM-SHA-1`;
 let cars: any[];
 const ngrokUri = Netlify.env.get("NGROK_URI") || "";
 
@@ -26,22 +26,7 @@ async function getCars(useLocal = false) {
   const client = new mongo.MongoClient();
 
   try {
-    await client.connect({
-      db: "Canary",
-      tls: true,
-      servers: [
-        {
-          host: "dev.z1sv7.mongodb.net",
-          port: 27017,
-        },
-      ],
-      credential: {
-        username: "whistlerjordan",
-        password,
-        db: "Canary",
-        mechanism: "SCRAM-SHA-1",
-      },
-    });
+    await client.connect(mongoUri);
     cars = await client.database("Canary").collection("Items").find().toArray();
   } finally {
     await client.close();
