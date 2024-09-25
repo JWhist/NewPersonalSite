@@ -9,7 +9,7 @@ Object.defineProperty(Deno, "osRelease", {
 });
 
 const password = Netlify.env.get("MONGODB_PW");
-const mongoUri = `mongodb+srv://whistlerjordan:${password}@dev.z1sv7.mongodb.net/Dev?authMechanism=SCRAM-SHA-1`;
+const mongoUri = `mongodb+srv://whistlerjordan:${password}@dev.z1sv7.mongodb.net/Dev?authMechanism=SCRAM-SHA-1&ssl=true`;
 let cars: any[];
 const ngrokUri = Netlify.env.get("NGROK_URI") || "";
 
