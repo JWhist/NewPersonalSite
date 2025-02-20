@@ -1,0 +1,22 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "New Bern",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"postal_code": "28562",
+			"subdivision": {
+				"code": "NC",
+				"name": "North Carolina"
+			},
+			"timezone": "America/New_York",
+			"latitude": 35.0987,
+			"longitude": -77.1045
+		},
+		"timestamp": 1727286040402
+	},
+	"promptVSCodeSettings": true,
+	"siteId": "a6041961-ab6d-4bf3-b70a-fb4ad087e65b"
+}
